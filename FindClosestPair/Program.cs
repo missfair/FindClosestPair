@@ -18,15 +18,6 @@ namespace FindClosestPair
             dataA = dataA.OrderBy(a => Math.Abs(a - ((decimal)target / 2))).ToArray();  //--->>> O(NlogN) sort ข้อมูลที่มีระยะห่าง จาก target น้อยที่สุดไว้แรกๆ จะได้ Hit บ่อย
             dataB = dataB.OrderBy(b => Math.Abs(b - ((decimal)target / 2))).ToArray();  //--->>> O(NlogN) sort ข้อมูลที่มีระยะห่าง จาก target น้อยที่สุดไว้แรกๆ จะได้ Hit บ่อย                
 
-            var dataA2 = dataA.OrderBy(a => Math.Abs(a - ((decimal)target / 2))).ThenBy(a => a).ToArray();  //--->>> O(NlogN) sort ข้อมูลที่มีระยะห่าง จาก target น้อยที่สุดไว้แรกๆ จะได้ Hit บ่อย
-            var dataB2 = dataB.OrderBy(b => Math.Abs(b - ((decimal)target / 2))).ThenBy(b => b).ToArray();  //--->>> O(NlogN) sort ข้อมูลที่มีระยะห่าง จาก target น้อยที่สุดไว้แรกๆ จะได้ Hit บ่อย           
-
-            Console.WriteLine("A is : " + string.Join(",", dataA));
-            Console.WriteLine("B is : " + string.Join(",", dataB));
-            Console.WriteLine("A2 is : " + string.Join(",", dataA2));
-            Console.WriteLine("A2 is : " + string.Join(",", dataB2));
-
-
             var consoleResult = string.Empty;
             int lengthA = dataA.Length, lengthB = dataB.Length;
             int lengthLoop = (lengthA < lengthB) ? lengthA : lengthB;                   //เลือก Loop ที่น้อยที่สุดจาก A หรือ B เพื่อใช้วน
